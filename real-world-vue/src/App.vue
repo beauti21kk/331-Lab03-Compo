@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import {ref} from 'vue'
+const sizes = ref<number>(2)
 import HelloWorld from './components/HelloWorld.vue'
 </script>
 
@@ -16,11 +18,14 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink :to="{name: 'category'}">Category</RouterLink>
         <RouterLink :to="{name: 'student'}">Student</RouterLink>
       </nav>
+      <div class="size">
+        <label>  Size : </label>
+        <input class="sizes" type="number" v-model="sizes" />
+      </div>
+        <RouterView :size="sizes"/>
       <!-- <h1>Events For Good</h1> --> 
     </div>
   </header>
-
-  <RouterView />
 </template>
 
 <style scoped>
