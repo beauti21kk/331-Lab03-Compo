@@ -32,9 +32,10 @@ const router = createRouter({
       component: StudentView
     },
     {
-      path: '/event/123',
+      path: '/event/:id',
       name: 'event-detail',
-      component: EventDetailView
+      component: EventDetailView,
+      props: true
     }
   ]
 })
