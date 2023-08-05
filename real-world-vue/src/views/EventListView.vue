@@ -36,10 +36,10 @@ const props = defineProps({
 <template>
   <main class="events">
     <EventCard v-for="event in events" :key="event.id" :event="event"></EventCard>
-    <RouterLink :to="{ name: 'event-list', query: { page: page - 1} }" rel="prev" v-if="page != 1">
+    <RouterLink :to="{ name: 'event-list', query: { page: page - 1 } }" rel="prev" v-if="page != 1" id="page-prev">
     Prev Page
     </RouterLink>
-    <RouterLink :to="{ name: 'event-list', query: { page: page + 1} }" rel="next" v-if="hasNextPage">
+    <RouterLink :to="{ name: 'event-list', query: { page: page + 1 } }" rel="next" v-if="hasNextPage" id="page-next">
     Next Page
     </RouterLink>
   </main>
